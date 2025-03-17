@@ -1,15 +1,15 @@
 project('test-qt-app', 'cpp',
   default_options: {
     'cpp_std': 'c++20',
+    'b_pie': true,
   })
 
-qt = import('qt5')
+qt = import('qt6')
 
 
 executable('test-qt-app',
   dependencies: [
-    dependency('Qt5Gui'),
-    dependency('Qt5Widgets'),
+    dependency('qt6', modules: [ 'Core', 'Widgets' ]),
   ],
   include_directories: [
   ],
